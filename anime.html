@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anime Details</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="animeDisplayStyles.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+            <nav class="navbar">
+                <div class="navbar-inner">
+                <div class="logo">
+                    <a href="/"><span class="tilt">A</span>ni<span class="tilt">V</span>erse</a>
+                </div>
+                <ul class="nav-links">
+                    <li id="animes"><a href="index.html">Animes</a></li>
+                    <li id="watched">Watched</li>
+                    <li><a href="watchlist.html">Watchlist</a></li>
+                    <li id="signin">Sign in</li>
+                </ul>
+                </div>
+            </nav>
+    </header>
+    <main class="main-back">
+        <div class="page-container">
+                <div class="top-image">
+                   
+                </div>
+                
+                <div class="anime-info" id="animeInfo">
+                    <div class="title">
+                    <h2 class="anime-title" id="animeTitle"></h2>
+                    <p class="anime-extras" id="animeExtras"></p>    
+                </div>
+                    <div class="left-side" id="leftSide">
+                        <div id="imageContainer"></div>
+                        <p class="score" id="score"></p>
+                        <div class="streaming" id="streaming"></div>
+                    </div>
+                    <div class="middle-side" id="middleSide">
+                        <p class="description" id="description"></p>
+                    </div>
+                    <div class="right-side" id="rightSide">
+                        <div class="actions">
+                            <button id="rateBtn">⭐ Rate</button>
+                            <button id="watchlistBtn">➕ Add to Watchlist</button>
+                        </div>
+                    </div>
+                </div>        
+        </div>
+    </main>
+    <footer class="footer">
+            <div class="footer-content">
+            <p>
+                © AniVerse · Made by Lena Deriso · Anime data from Jikan API
+                <!-- <a href="#">Mobile site</a>. -->
+            </p>
+            </div>
+    </footer>
+    <script src="animeDisplay.js"></script>
+</body>
+</html>

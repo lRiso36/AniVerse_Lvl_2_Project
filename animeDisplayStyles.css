@@ -1,0 +1,218 @@
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+    margin: 0;  
+    width: 100%;  
+    min-width: 1000px;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Inter', sans-serif;
+    /* overflow-x: hidden; */
+    /* display: flex;
+    flex-direction: column; */
+    min-height: 100vh;
+}
+
+.navbar {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    background-color: rgb(34, 33, 33);
+    height: 90px;
+    position: relative;
+    width: 100%;
+    min-width: 1000px; 
+}
+.navbar-inner {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.logo {
+  font-family: 'Cinzel', serif;
+  font-size: 42px;
+  letter-spacing: 3px;
+  font-weight: bold;
+  padding: 15px 15px;
+  color: rgb(154, 61, 61);
+  text-shadow: 2px 1px #000000
+}
+
+.nav-links {
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    list-style-type: none;
+
+    display: flex;
+    flex-direction: row;
+    text-decoration: none;
+    gap: 15px;
+    font-size: 15px;
+    font-weight: 1000;
+    color: rgb(179, 179, 179);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.footer {
+    background-color: rgb(34, 33, 33);
+    color: rgb(140, 140, 140);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    text-align: center;
+    padding: 20px 10px;
+    margin-top: 0;
+    margin-bottom: 0;
+    width: 100%;
+    min-width: 1000px; 
+    /* flex: 1; */
+}
+
+.main-back {
+    /* height: 100vh; */
+    background: linear-gradient(
+        to bottom,
+        rgb(154, 61, 61) 0%,
+        rgb(99, 42, 42) 15%,
+        rgb(66, 35, 35) 25%,
+        rgb(43, 29, 29) 40%,
+        rgb(34, 27, 27)50%,
+        rgb(18, 18, 18) 80%
+         );
+        /* flex: 1; */
+}
+.page-container {
+    max-width: 1400px;
+    min-width: 1000px;
+    margin: 0 auto;
+    padding-bottom: 40px;
+    background-color: #121212;
+}
+
+.top-image {
+    height: 400px;
+    width: 100%;
+    /* background-image: url("https://media.thepopverse.com/media/code-geass-lelouch-4m0liuh5jmofrcljx0vbeimria.jpg") ; */
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+.top-image::after {
+
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(
+        to bottom,
+        rgba(18,18,18,0) 40%,
+        rgba(18,18,18,0.8) 75%,
+        rgba(18,18,18,1) 100%
+    );
+}
+
+.anime-info {
+    /* background-color: rgb(34, 33, 33); */
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-areas: 
+    "left title title"
+    "left middle right"
+    ;
+    gap: 40px;
+    padding: 30px;
+}
+
+.left-side {
+    grid-area: left;
+    /* background-color: rgb(85, 79, 79); */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+    max-width: 300px;
+    border-radius: 8px;
+}
+
+.left-side img {
+    width: 100%;
+    border-radius: 15px;
+}
+.actions {
+  margin-top: 15px;
+  display: flex;
+  gap: 10px;
+}
+
+.actions button {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  background: #333;
+  color: white;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  transition: 0.2s;
+  font-size: 18px;
+}
+
+.actions button:hover {
+    background: #555;
+}
+.score {
+    color: white;
+    margin-top: 8px;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.middle-side {
+    grid-area: middle;
+    /* background-color: grey; */
+    display: flex;
+    flex-direction: column;
+    padding: 0px;
+}
+.title {
+    grid-area: title;
+}
+.anime-title {
+    margin-bottom: 0px;
+    font-size: 40px;
+}
+
+.anime-extras {
+    margin-bottom: 0px;
+    color: #aaa;
+    font-size: 20px;
+}
+
+.description {
+    margin-top: 0px;
+    line-height: 1.6;
+    color: #ddd;
+    font-size: 20px;
+    max-width: 600px;
+}
+
+
+.right-side {
+    grid-area: right;
+    display: flex;
+    flex-direction: column;
+    background-color: #2a2a2a;
+    padding: 20px;
+    border-radius: 10px;
+    /* height: fit-content; */
+    max-width: 300px;
+    /* margin-top: 80px; */
+}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Watchlist</title>
+     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="watchStyles.css">
+</head>
+<body>
+    <header>
+            <nav class="navbar">
+                <div class="navbar-inner">
+                <div class="logo">
+                    <a href="/"><span class="tilt">A</span>ni<span class="tilt">V</span>erse</a>
+                </div>
+                <ul class="nav-links">
+                    <li id="animes"><a href="index.html">Animes</a></li>
+                    <li id="watched">Watched</li>
+                    <li><a href="watchlist.html">Watchlist</a></li>
+                    <li id="signin">Sign in</li>
+                </ul>
+                </div>
+            </nav>
+    </header>
+    <main class="main-back">
+            <div class="page-container">
+              <div class="title-and-search">
+                <h1 class="watchlist-title">Watchlist</h1>
+                <button class="add-btn" id="addBtn"><span class="plus">+</span> Add</button>
+              </div>
+                <div class="watchlist-container" id="watchlistContainer">
+                </div>
+            </div>
+    </main>
+    <div id="bigSearchBar" class="big-search-bar hidden">
+      <div class="search-container" id="searchContainer">
+        <div class="search-header">
+          <span class="header">Add to your animes...</span>
+          <button class="close-btn" id="closeBtn">&times;</button>
+        </div>
+        
+        <div class="search-body" >
+          <div class="input-wrapper">
+          <input type="text" id="searchInput" placeholder="Search for anime..."/>
+          <div class="dropdown" id="dropdown"></div>
+          </div>
+        </div>
+        <div class="contact-container">
+        <p class="contact">Can't find an anime? <a href="mailto:ard239@miami.edu">Contact us!</a></p>
+        </div>
+      </div>  
+    </div>
+    <div class="quickAdd-container">
+    </div>
+    <footer class="footer">
+    <div class="footer-content">
+      <p>
+        © AniVerse · Made by Lena Deriso · Anime data from Jikan API
+        <!-- <a href="#">Mobile site</a>. -->
+      </p>
+  </div>
+</footer>
+  <script src="watchlist.js"></script>
+</body>
+</html>

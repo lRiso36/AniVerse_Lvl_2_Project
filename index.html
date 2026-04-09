@@ -1,0 +1,81 @@
+<!--
+draw out what i want it ot look like
+-->
+<!--Goes into API and returns an array of matches 
+after you press search
+
+You can click on the correct one and then add it to list and rate
+it, which will then automatically rank it
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="AniVerse Project">
+        <meta name="author" content="Lena Deriso">
+        <title>AniVerse</title>
+         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <link rel="stylesheet" href="styles.css"/>
+    </head>
+    <body>
+        <header>
+            <nav class="navbar">
+                <div class="navbar-inner">
+                <div class="logo">
+                    <a href="/"><span class="tilt">A</span>ni<span class="tilt">V</span>erse</a>
+                </div>
+                <ul class="nav-links">
+                    <li id="animes"><a href="index.html">Animes</a></li>
+                    <li id="watched">Watched</li>
+                    <li><a href="watchlist.html">Watchlist</a></li>
+                    <li id="signin">Sign in</li>
+                </ul>
+                </div>
+            </nav>
+        </header>
+        <main class="main-back">
+            <div class="page-container">
+                <div class="search-area">
+                    <div class="search-bar">
+                    <p class="search-text">Find an anime</p>
+
+                    <div class="search-container" id="searchContainer">
+                            <input
+                            type="search"
+                            id="query"
+                            name="q"
+                            placeholder="Search for anime..."
+                            autocomplete="off"
+                            required
+                            />
+                            <div class="dropdown" id="dropdown"></div>
+                    </div>
+                    </div>
+                </div>
+                </div>
+                <!-- <div class="page-container-2">
+                <div class="slider-section">
+                    <button class="slider-btn left">&lt</button>
+                        <div class="slider-track" id="topAnimeSlider">
+                    
+                        </div>
+                    <button class="slider-btn right">&gt</button>
+                </div>
+            </div> -->
+        </main>
+        <aside>
+        <!-- Ill have a sidebar and when its small enough it will go below -->
+        </aside>
+        <footer class="footer">
+            <div class="footer-content">
+            <p>
+                © AniVerse · Made by Lena Deriso · Anime data from Jikan API
+                <!-- <a href="#">Mobile site</a>. -->
+            </p>
+            </div>
+        </footer>
+    </body>
+    <script src="script.js"></script>
+</html>
