@@ -145,7 +145,7 @@ input:hover {
 
 .dropdown {
     position: absolute;
-    top: 100%;   /* 👈 THIS is critical */
+    top: 100%;  
     left: 0;
     width: 100%;
 
@@ -169,7 +169,7 @@ input:hover {
 
   display: -webkit-box;
   -webkit-line-clamp: 3;
-  line-clamp: 3;           /* 👈 max 3 lines */
+  line-clamp: 3;        
   -webkit-box-orient: vertical;
 
   overflow: hidden;
