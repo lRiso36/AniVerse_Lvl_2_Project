@@ -4,63 +4,108 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Watchlist</title>
+    <!-- using axios link-->
      <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+     <!-- end using axios link-->
     <link rel="stylesheet" href="watchStyles.css">
 </head>
 <body>
-    <header>
+    <header> 
+            <!-- navbar-->
             <nav class="navbar">
                 <div class="navbar-inner">
                 <div class="logo">
                     <a href="/"><span class="tilt">A</span>ni<span class="tilt">V</span>erse</a>
                 </div>
+
+                <!-- only visible on mobile -->
+                <div class="menu-toggle">☰</div>
+
+                <!-- regular nav tab links -->
                 <ul class="nav-links">
                     <li id="animes"><a href="index.html">Animes</a></li>
                     <li id="watched">Watched</li>
                     <li><a href="watchlist.html">Watchlist</a></li>
                     <li id="signin">Sign in</li>
+
+                    <!-- search only appears for mobile -->
+                    <li><a href="#" class="nav-search-btn" id="navSearchBtn">Search</a></li>
+
                 </ul>
+                <!-- end nav tab links -->
+
+              
+                <!-- activates once search button is hit -->
+                <div class="nav-search" id="navSearch">
+                  <div class="nav-search-container">
+                    <input
+                            type="search"
+                            id="mobileQuery"
+                            placeholder="Search for anime..."
+                            autocomplete="off"
+                            required
+                            />
+                    <div class="dropdown" id="mobileDropdown"></div>
+                  </div>
+                </div>
+                <!-- end of activates once saarch button hit-->
+
                 </div>
             </nav>
+            <!-- end of navbar -->
     </header>
     <main class="main-back">
             <div class="page-container">
+              <!-- flexbox container for "watchlist title" and AddBtn -->
               <div class="title-and-search">
                 <h1 class="watchlist-title">Watchlist</h1>
                 <button class="add-btn" id="addBtn"><span class="plus">+</span> Add</button>
               </div>
-                <div class="watchlist-container" id="watchlistContainer">
-                </div>
+
+                <!-- container holding anime cards added to watchlist -->
+                <div class="watchlist-container" id="watchlistContainer"></div>
+                
             </div>
     </main>
+
+    <!-- search bar for when you press "Add" button -->
+     <!-- overarching container/flexbox is hidden to begin-->
     <div id="bigSearchBar" class="big-search-bar hidden">
       <div class="search-container" id="searchContainer">
+        <!-- top part -->
         <div class="search-header">
           <span class="header">Add to your animes...</span>
           <button class="close-btn" id="closeBtn">&times;</button>
         </div>
         
+        <!-- input bar -->
         <div class="search-body" >
           <div class="input-wrapper">
           <input type="text" id="searchInput" placeholder="Search for anime..."/>
           <div class="dropdown" id="dropdown"></div>
           </div>
         </div>
+
+        <!-- contact us line -->
         <div class="contact-container">
-        <p class="contact">Can't find an anime? <a href="mailto:ard239@miami.edu">Contact us!</a></p>
+          <p class="contact">Can't find an anime? <a href="contact.html">Contact us!</a></p>
         </div>
+
       </div>  
     </div>
-    <div class="quickAdd-container">
-    </div>
-    <footer class="footer">
+    <!-- end of hidden search bar -->
+
+    <!-- IDK WHAT THIS DOES -->
+    <div class="quickAdd-container"></div>
+
+  <footer class="footer">
     <div class="footer-content">
       <p>
         © AniVerse · Made by Lena Deriso · Anime data from Jikan API
         <!-- <a href="#">Mobile site</a>. -->
       </p>
-  </div>
-</footer>
+    </div>
+  </footer>
   <script src="watchlist.js"></script>
 </body>
 </html>

@@ -8,11 +8,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="AniVerse Project">
         <meta name="author" content="Lena Deriso">
-        <title>AniVerse</title>
+        <title>Contact Us</title>
         <!-- using axios link-->
          <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
         <!-- end using axios link-->
-        <link rel="stylesheet" href="styles.css"/>
+        <link rel="stylesheet" href="contactStyles.css"/>
     </head>
     <body>
         <header>
@@ -59,26 +59,47 @@
         </header>
         <main class="main-back">
             <div class="page-container">
-                <!-- only used for computer layout -->
-                <div class="search-area">
-                    <div class="search-bar">
-                    <p class="search-text">Find an anime</p>
+                <div class="contact-title-container">
+                    <h1 class="contact-title">Contact Us!</h1>
+                </div>
 
-                    <div class="search-container" id="searchContainer">
-                            <input
-                            type="search"
-                            id="query"
-                            name="q"
-                            placeholder="Search for anime..."
-                            autocomplete="off"
-                            required
-                            />
-                            <div class="dropdown hidden" id="dropdown"></div>
-                    </div>
-                    </div>
+                <div class="contact-form-container">
+                    <form class="contact-form" id="contactForm">
+
+                        <div class="form-grid">
+
+                            <div class="form-group">
+                                <label for="name">Name<span>*</span></label>
+                                <input name="name" type="text" placeholder="Name" id="name" autocomplete="name" required/>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Email<span>*</span></label>
+                                <input name="email" type="email" placeholder="Email" id="email" autocomplete="email" required />
+                            </div>
+
+                            <div class="form-group">
+                                <label for="anime_title">Anime Title<span>*</span></label>
+                                <input name="anime_title" type="text" placeholder="Enter title..." id="anime_title" required />
+                            </div>
+
+                            <div class="form-group full">
+                                <label for="message">Message</label>
+                                <textarea name="message" placeholder="Type a message..." id="message" rows="5"></textarea>
+                            </div>
+
+                        </div>
+
+                        <div>
+
+                            <button type="submit" class="submit-btn">Submit</button>
+
+                        </div>
+
+
+                    </form>
                 </div>
-                <!-- end of only used for computer layout -->
-                </div>
+            </div>
         </main>
         <aside>
         <!-- Ill have a sidebar and when its small enough it will go below -->
@@ -91,6 +112,7 @@
             </p>
             </div>
         </footer>
+        <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+        <script src="contactScript.js"></script>
     </body>
-    <script src="script.js"></script>
 </html>

@@ -2,10 +2,14 @@
     box-sizing: border-box;
 }
 
-/* GET RID OF ALL MIN-WIDTHS FOR PAGE  */
+/* GET RID OF MIN-WIDTH FOR RESPONSIVENESS */
 
 body {
-    margin: 0;  
+    margin: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;  
 }
 
 .navbar {
@@ -25,12 +29,11 @@ body {
     margin: 0 auto;
 }
 
-/* the "search" bar in place of mobile navbar */
+/* search bar that shows in navbar when click search */
 .nav-search.active {
     display: block;
 }
 
-/* display = none on not active (when no one clicked search) */
 .nav-search {
     display: none;
     position: absolute;
@@ -42,13 +45,13 @@ body {
     z-index: 9999;
 }
 
-/* input for mobile navbar search */
 .nav-search input {
     width: 100%;
     padding: 10px;
     font-size: 18px;
 }
 
+/* end of search bar */
 .logo {
   font-family: 'Cinzel', serif;
   font-size: 42px;
@@ -59,7 +62,6 @@ body {
   text-shadow: 2px 1px #000000
 }
 
-/* tabs */
 .nav-links {
     font-family: 'Montserrat', sans-serif;
     letter-spacing: 2px;
@@ -75,12 +77,10 @@ body {
     color: rgb(179, 179, 179);
 }
 
-/* only applies to mobile. adds "search" tab to navbar options */
 .nav-search-btn {
-    display: none;
+        display: none;
 }
 
-/* link decor */
 a {
     text-decoration: none;
     color: inherit;
@@ -94,11 +94,13 @@ a {
     text-align: center;
     padding: 20px 10px;
     margin-top: 0;
+    /* flex: 1; */
 }
   
-  
 .main-back {
-    height: 100vh;
+    /* height: 100vh; */
+    /* min-height: 100vh; */
+    flex: 1;
     background: linear-gradient(
         to bottom,
         rgb(154, 61, 61) 0%,
@@ -109,74 +111,109 @@ a {
         rgb(18, 18, 18) 80%
          );
 }
-
-/* inplace so main back gradient shows */
 .page-container {
-    max-width: 1400px;
+    max-width: 1200px;
     margin: 0 auto;
-    width: 100%;
-    /* overflow: hidden; */
+    /* background-color: rgb(21, 21, 21); */
 }
-
-/* .search-area {
-    position: relative;
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 20px 30px;
-} */
-
-/* contains all regaridng search in computer version */
-.search-bar {
+.contact-title-container {
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
-    gap: 25px;
-    height: 100px;
-    padding-top: 10px;
+    /* max-width: 1000px; */
+    max-width: 1300px; /* match container */
+    margin: 0 auto 10px;
+    /* width: fit-content; */
+    border-bottom: 1px solid black;
+    margin-bottom: 20px;
+    margin-top: 10px;
 }
 
-/* "find your anime" or whatever */
-.search-text {
+.contact-title {
     font-size: 25px;
     font-family: 'Montserrat', sans-serif;
     text-transform: uppercase;
     letter-spacing: 1px;
     font-weight: 600;
     color: rgb(34, 33, 33);
+    /* color: white; */
     font-weight: 600px;
-    padding: 30px;
+    padding: 10px;
     text-shadow: 1px 1px #000000;
+    /* border-bottom: 1px solid black; */
 }
 
-/* contains input and dropdown */
-.search-container {
-    position: relative;
-}
-
-.search-container input{
-    height: 40px;
-    width: 300px;
-    background-color: grey;
-    padding: 20px 15px 15px 15px;
-    border: none;
-    border-radius: 10px;
-    font-size: 20px;
-}
-
-.search-container input::placeholder {
-    color: rgba(34, 33, 33,0.6);
-    font-size: 20px;
+.contact-form-container {
+    display: flex;
     justify-content: center;
+    margin-top: 30px;
+    /* border: 1px solid green; */
 }
 
-input:hover {
-    color: black;
+.contact-form {
+    width: 100%;
+    max-width: 700px;
+    background: #2a2a2a;
+    padding: 30px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-size: 25px;
+    margin-bottom: 5px;
+    color: rgb(179, 179, 179);
+}
+
+.form-group span {
+    color: #df8d8d;
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 12px;
+    border-radius: 6px;
+    border: none;
+    background: #444;
+    color: white;
+    font-size: 16px;
+}
+
+.full {
+    grid-column: 1 / -1;
+}
+
+/* button */
+.submit-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: rgb(154, 61, 61);
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.submit-btn:hover {
+    background: rgb(180, 80, 80);
 }
 
 .dropdown {
     position: absolute;
-    top: 100%;  
+    top: 100%;   
     left: 0;
     width: 100%;
 
@@ -192,18 +229,15 @@ input:hover {
     z-index: 1000;
 }
 
-.hidden {
-    display: none;
-}
 .dropdown-item {
-  padding: 10px 12px;
+  padding: 20px 12px;
   cursor: pointer;
   border-bottom: 1px solid #eee;
-  font-size: 18px;
+  font-size: 14px;
 
   display: -webkit-box;
   -webkit-line-clamp: 3;
-  line-clamp: 3;        
+  line-clamp: 3;         
   -webkit-box-orient: vertical;
 
   overflow: hidden;
@@ -217,7 +251,6 @@ input:hover {
     border-bottom: none;
 }
 
-/* the three white lines that show up on navbar for mobile */
 .menu-toggle {
     display: none;
     font-size: 30px;
@@ -225,17 +258,17 @@ input:hover {
     color: white;
 }
 
-
 @media (max-width: 500px) {
     .logo {
         font-size: 28px;
+        padding: 5px;
+        margin-top: 10px;
     }
 
     body {
         width: 100%;
     }
 
-    /* 3 white lines in navbar */
     .menu-toggle {
         position: relative;
         display: block;
@@ -252,7 +285,6 @@ input:hover {
         /* margin-bottom: -30px; */
     }
 
-    /* makes search visible on mobile */
     .nav-search-btn {
         display: inline-block;
     }
@@ -277,34 +309,30 @@ input:hover {
         flex-direction: column;
 
         background-color: rgb(34,33,33);
-
+        
         position: absolute;
         top: 40px;                 /* right under navbar */
         left: 0;
         width: 100%;
 
-        /* height: calc(100vh - 40px);  */
         overflow-y: auto;
 
         padding-left: 0;
         padding: 10px;
     }
 
-    /* when you use menu toggle */
     .nav-links.active {
         display: flex; 
     }
 
     .nav-links li {
+        /* padding: 5px 0; */
         padding-top: 10px;
         padding-bottom: 0;
         border-top: 1px solid rgba(255,255,255,0.1);
-        /* border: 1px solid green; */
         text-align: center;
         align-items: center;
     }
-
-    /* computer search bar */
     .search-bar {
     display: none;
     }
@@ -348,6 +376,102 @@ input:hover {
     .dropdown-item:last-child {
         border-bottom: none;
     }
+
+    
+    .empty-message {
+        grid-column: 1 / -1;
+        text-shadow: 1px 1px #000000;
+        font-size: 19px;
+        padding: 20px;
+        width: 100%;
+    }
+
+    .empty-message p {
+        font-size: 13px;
+    }
+
+    .empty-message span {
+        color: rgb(154, 61, 61);
+        padding: 0 3px 0 3px;
+    }
+
+    .watchlist-title {
+        font-size: 19px;
+        padding: 0;
+    }
+
+    .plus {
+        font-size: 22px;
+        font-weight: 700;
+        line-height: 1;
+    }
+
+    .title-and-search {
+        padding: 5px;
+    }
+
+    .add-btn {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 5px;
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 1;
+        text-transform: uppercase;
+        border-radius: 8px;
+        color: rgb(179, 179, 179);
+        background-color: rgb(34, 33, 33);
+    }
+
+    .watchlist-container {
+        grid-template-columns: repeat(auto-fill, 110px);
+        gap: 10px;
+        margin-left: 10px;
+    }
+
+    .delete-btn {
+        opacity:1;
+        padding: 0;
+        height: 20px;
+        width: 20px;
+        font-size: 14px;
+        font-weight: 400;
+    }
+
+    .anime-card h3 {
+        font-size: 10px;
+    }
+
+    .anime-card p {
+        font-size: 9px;
+    }
+
+    .contact-form {
+        padding: 10px;
+        width: 90%;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .form-group label {
+        font-size: 16px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        padding: 6px;
+        font-size: 14px;
+        /* max-width: 300px; */
+    }
+
+    .submit-btn {
+        padding: 8px 16px;
+    }
+
 }
 
 @media (min-width: 500px) and (max-width: 700px) {
@@ -397,6 +521,65 @@ input:hover {
         align-items: center;
     }
 
+    .title-and-search {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    /* max-width: 1000px; */
+    max-width: 1300px; /* match container */
+    margin: 0 auto 10px;
+    /* width: fit-content; */
+    border-bottom: 1px solid black;
+    margin-bottom: 20px;
+    }
+
+    .plus {
+        font-size: 22px;
+    }
+
+    .add-btn {
+        font-size: 18px;
+        margin-right: 5px;
+    }
+
+    .watchlist-title {
+        font-size: 22px;
+    }
+
+    .watchlist-container {
+        grid-template-columns: repeat(auto-fill, 120px);
+        gap: 10px;
+        margin-left: 10px;
+    }
+
+    .delete-btn {
+        opacity:1;
+        padding: 0;
+        height: 20px;
+        width: 20px;
+        font-size: 14px;
+        font-weight: 400;
+    }
+
+    .anime-card h3 {
+        font-size: 12px;
+    }
+
+    .anime-card p {
+        font-size: 11px;
+    }
+
+    .empty-message {
+        font-size: 20px;
+        padding: 20px;
+    }
+
+    .empty-message p {
+        font-size: 16px;
+    }
+
+    
     .dropdown {
         position: absolute;
         top: 100%;  
@@ -437,64 +620,21 @@ input:hover {
         border-bottom: none;
     }
 
-    .search-bar {
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-start;
-        align-items: center;
-        gap: 5px;
-        height: 100px;
-        padding-top: 10px;
+    .contact-form {
+        padding: 10px;
+        width: 90%;
     }
 
-/* "find your anime" or whatever */
-    .search-text {
+    .form-group label {
         font-size: 20px;
     }
 
-    .search-container input{
-        height: 15px;
-        width: 250px;
+    .form-group input,
+    .form-group textarea {
+        font-size: 16px;
+        padding: 10px;
     }
 
-    .search-container input::placeholder {
-        font-size: 18px;
-    }
+
 }
 
-/* SHOULDNT GO ANY SMALLER THAN 700 */
-/* @media (max-width: 700px) {
-    .search-bar {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-        height: auto;
-    }
-
-    .search-container input {
-        width: 100%;
-        max-width: 100%;
-    }
-} */
-
-/* @media (max-width: 768px) {
-    .menu-toggle {
-        display: block;
-    }
-
-    .nav-links {
-        display: none;
-    }
-
-    .nav-search-btn {
-        display: inline-block;
-    }
-
-    .search-bar {
-        display: none;
-    }
-
-    .logo {
-        font-size: 32px;
-    }
-} */

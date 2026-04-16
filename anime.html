@@ -15,12 +15,37 @@
                 <div class="logo">
                     <a href="/"><span class="tilt">A</span>ni<span class="tilt">V</span>erse</a>
                 </div>
+
+                <!-- only visible on mobile -->
+                <div class="menu-toggle">☰</div>
+
+                <!-- regular nav tab links -->
                 <ul class="nav-links">
                     <li id="animes"><a href="index.html">Animes</a></li>
                     <li id="watched">Watched</li>
                     <li><a href="watchlist.html">Watchlist</a></li>
                     <li id="signin">Sign in</li>
+
+                    <!-- search only appears for mobile -->
+                    <li><a href="#" class="nav-search-btn" id="navSearchBtn">Search</a></li>
+                    <!-- -- -- -->
                 </ul>
+                <!-- end nav tab links -->
+
+                <!-- activates once search button is hit -->
+                <div class="nav-search" id="navSearch">
+                    <div class="nav-search-container">
+                    <input
+                            type="search"
+                            id="mobileQuery"
+                            placeholder="Search for anime..."
+                            autocomplete="off"
+                            required
+                            />
+                    <div class="dropdown" id="mobileDropdown"></div>
+                    </div>
+                </div>
+
                 </div>
             </nav>
     </header>
@@ -33,7 +58,8 @@
                 <div class="anime-info" id="animeInfo">
                     <div class="title">
                     <h2 class="anime-title" id="animeTitle"></h2>
-                    <p class="anime-extras" id="animeExtras"></p>    
+                    <p class="anime-extras" id="animeExtras"></p>  
+                    <p class="mobile-score" id="mobileScore"></p> 
                 </div>
                     <div class="left-side" id="leftSide">
                         <div id="imageContainer"></div>

@@ -6,6 +6,15 @@ const searchInput = document.getElementById("searchInput");
 const dropdown = document.getElementById("dropdown");
 const deleteBtn = document.getElementById("deleteBtn");
 
+//Mobile DOM
+const menuToggle = document.querySelector(".menu-toggle");
+const nav = document.querySelector(".nav-links");
+const mobileInput = document.getElementById("mobileQuery");
+const mobileDropdown = document.getElementById("mobileDropdown");
+const navSearchBtn = document.getElementById("navSearchBtn");
+const searchBox = document.querySelector(".nav-search");
+
+
 //render list on pade load
 renderWatchlist();
 
@@ -198,4 +207,90 @@ document.addEventListener("click", (e) => {
 
 function saveWatchlist() {
     loadStorage.setItem("watchlist", JSON.stringify(watchlist));
+}
+
+//MOBILE ____________________________
+menuToggle.addEventListener("click", () => {
+    nav.classList.toggle("active");
+    searchBox.classList.remove("active");
+});
+// const topAnimesContainer = document.querySelector(".top-animes-container");
+// // getTopAnimes();
+
+// click search
+navSearchBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    nav.classList.remove("active");       // hide links
+    searchBox.classList.toggle("active"); // show search
+});
+
+
+mobileInput.addEventListener("input", function() {
+    
+    let query = mobileInput.value.trim();
+    console.log(query);
+
+    clearTimeout(timeout);
+
+    timeout = setTimeout(()=> {
+        if(query.length <= 2) {
+            mobileDropdown.innerHTML = "";
+            return;
+        }
+
+        // getAnime(query);
+        getAnimeMobile(query);
+
+    }, 300) //300ms delay
+})
+
+mobileInput.addEventListener("click", function() {
+    let query = mobileInput.value.trim();
+
+    if(query.length > 2) {
+        // getAnime(query);
+        getAnimeMobile(query);
+    }
+})
+
+// document.addEventListener("click", function (event) {
+
+//     if(!searchContainer.contains(event.target)) {
+//         dropdown.innerHTML = "";
+//     }
+// });
+
+//END MOBILE _________________________
+
+async function getAnimeMobile(aQuery) {
+    try{
+        const response = await axios.get(`https://api.jikan.moe/v4/anime?q=${aQuery}`);
+        mobileDropdownropdown.innerHTML = "";
+
+        if(response.data.data.length === 0) {
+            mobileDropdown.innerHTML = `<div class='dropdown-item'>No results found</div>`;
+            return;
+        }
+
+        response.data.data.slice(0, 15).forEach(anime => {
+
+            let newAnime = document.createElement("div");
+            newAnime.classList.add("dropdown-item");
+
+            const year = anime.aired?.from?.slice(0,4) || "N/A";
+            const animeTitle = anime.title_english || anime.title;
+            newAnime.textContent = `${animeTitle} (${year})`;
+
+            //click handler? anime.mal_id
+            newAnime.addEventListener("click", function() {
+                window.location.href = `anime.html?id=${anime.mal_id}`;
+            });
+
+            mobileDropdown.appendChild(newAnime);
+        });
+
+    } catch (error){
+        console.log(error);
+        mobileDropdown.innerHTML = `<div class='dropdown-item'>Error fetching animes. Try again</div>`;
+    }
 }
