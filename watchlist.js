@@ -5,6 +5,7 @@ const closeBtn = document.getElementById("closeBtn");
 const searchInput = document.getElementById("searchInput");
 const dropdown = document.getElementById("dropdown");
 const deleteBtn = document.getElementById("deleteBtn");
+const searchContainer = document.getElementById("searchContainer");
 
 //Mobile DOM
 const menuToggle = document.querySelector(".menu-toggle");
@@ -205,8 +206,8 @@ document.addEventListener("click", (e) => {
 });
 
 
-function saveWatchlist() {
-    loadStorage.setItem("watchlist", JSON.stringify(watchlist));
+function saveWatchlist(watchlist) {
+    localStorage.setItem("watchlist", JSON.stringify(watchlist));
 }
 
 //MOBILE ____________________________
@@ -265,7 +266,7 @@ mobileInput.addEventListener("click", function() {
 async function getAnimeMobile(aQuery) {
     try{
         const response = await axios.get(`https://api.jikan.moe/v4/anime?q=${aQuery}`);
-        mobileDropdownropdown.innerHTML = "";
+        mobileDropdown.innerHTML = "";
 
         if(response.data.data.length === 0) {
             mobileDropdown.innerHTML = `<div class='dropdown-item'>No results found</div>`;
